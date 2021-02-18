@@ -9,21 +9,22 @@ btn.addEventListener('click', () => {
   let newList = {
     list: input.value
   }
-
   arrList.push(newList);
   console.log('arrList: ', arrList);
   displayMessages();
 });
 
 const displayMessages = () => {
-  let displayMessage = '';
 
+  let displayMessage = '';
   arrList.forEach(() => {
     displayMessage += `
     <li>
       ${input.value}
     </li>
     `
-    ul.innerHTML = displayMessage;
+    li.innerHTML = displayMessage;
+    ul.append(li);
   })
 }
+
