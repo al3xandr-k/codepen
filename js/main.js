@@ -3,9 +3,27 @@ const input = document.querySelector('input');
 const ul = document.querySelector('ul');
 const li = document.createElement('li');
 
-btn.onclick = () => {
-  li.innerHTML = input.value;
-  input.value = '';
-  ul.append(li);
-}
+let arrList = [];
 
+btn.addEventListener('click', () => {
+  let newList = {
+    list: input.value
+  }
+
+  arrList.push(newList);
+  console.log('arrList: ', arrList);
+  displayMessages();
+});
+
+const displayMessages = () => {
+  let displayMessage = '';
+
+  arrList.forEach(() => {
+    displayMessage += `
+    <li>
+      ${input.value}
+    </li>
+    `
+    ul.innerHTML = displayMessage;
+  })
+}
